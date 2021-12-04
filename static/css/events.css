@@ -1,0 +1,160 @@
+.heading_event {
+    margin-top: 150px;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 61px;
+    align-items: center;
+    color: rgba(51, 51, 51, 0.9);
+    margin-bottom: 20px;
+}
+
+.subtitle_event {
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(51, 51, 51, 0.7);
+    margin-bottom: 40px;
+}
+
+.element {
+    background-color: white;
+    margin-bottom: 20px;
+    display: flex;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.img_event {
+    width: 40%;
+    object-fit: cover;
+}
+
+.description {
+    padding: 20px;
+}
+
+.el_title a {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(51, 51, 51, 0.9);
+    margin-bottom: 10px;
+}
+
+.el_date {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    align-items: center;
+    color: rgba(51, 51, 51, 0.5);
+    margin-bottom: 5px;
+}
+
+.el_address {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    align-items: center;
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.el_desc {
+    padding-top: 2%;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(51, 51, 51, 0.7);
+}
+
+.read {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4DAAA7;
+}
+
+.icon-event {
+    display: inline;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+.heading_home {
+    text-align: center;
+    margin-top: 80px;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 61px;
+    align-items: center;
+    color: rgba(51, 51, 51, 0.9);
+    margin-bottom: 20px;
+}
+
+.subtitle_home {
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(51, 51, 51, 0.7);
+    margin-bottom: 50px;
+}
+
+.see_all_events {
+    display: flex;
+}
+
+.events_btn {
+    margin: auto;
+}
+
+#event_like {
+    display: contents;
+}
+
+.el_title .menu {
+    margin-right: 10px;
+}
+
+.el_title .menu .submenu li {
+    right: -9px;
+}
+
+#loading {
+    display: none;
+    left: 50%;
+    position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+    .element {
+        display: inline-block;
+    }
+
+    .heading_home, .heading_event {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .subtitle_home, .subtitle_event {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .img_event {
+        width: 100%;
+    }
+
+    .description {
+        width: 100%;
+    }
+
+    .el_title {
+        font-size: 20px;
+    }
+
+    .el_desc {
+        font-size: 14px;
+    }
+}
+
+a {
+    color: #4DAAA7;
+}

@@ -1,0 +1,359 @@
+.profile-container {
+    margin-top: 160px;
+}
+
+.profile-container .left {
+    width: 50%;
+}
+
+.profile-container .right {
+    width: 50%;
+}
+
+.profile-container .card.card-desktop {
+    width: auto;
+    max-width: 300px;
+}
+
+.profile-container .title {
+    color: #78909C;
+    font-size: 12px;
+}
+
+.profile-container .info {
+    color: #37474F;
+    font-size: 13px;
+    margin: 0;
+}
+
+.nav-tabs {
+    border-bottom: 3px solid rgba(153, 153, 153, 0.2);
+    height: fit-content;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -3px;
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border: none
+}
+
+.nav-tabs .nav-link {
+	color: #333333;
+	opacity: 0.5;
+	font-size: 18px;
+    line-height: 22px;
+    padding: 0.5rem 4rem;
+}
+
+.nav-tabs .nav-link.active {
+	border: none;
+	border-bottom: 3px solid #4DAAA7;
+	font-weight: bold;
+	opacity: 1;
+    background-color: transparent;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.donation-card.card {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 10px !important;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+a.donation-card.card {
+    text-decoration: none;
+    margin-right: 0;
+}
+
+.donation-card.card .card-body {
+    padding: 15px 1.25rem;
+    width: inherit;
+}
+
+.donation-card .card-img {
+    height: 74px;
+    width: 130px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-left: 30px;
+}
+
+#profileTabContent {
+    margin-top: 50px;
+    max-height: 550px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.category {
+    color: rgba(51, 51, 51, 0.5);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.project-title {
+    color: #333333;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 0;
+    margin: 0;
+}
+
+.date {
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(55, 71, 79, 0.5);
+}
+
+.donation-card .amount {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    color: #37474F;
+    font-weight: 500;
+}
+
+.payment {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: linear-gradient(270deg, #00928A 0%, #0EACA8 100%);
+    background-image: linear-gradient(270deg, #00928A 0%, #0EACA8 100%);
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.donation-card .line {
+    opacity: 0.4;
+    border: 1px solid #4DAAA7;
+    box-sizing: border-box;
+    align-self: center;
+    margin: 30px 0;
+    min-height: 40px;
+}
+
+.amount-box .amount-title {
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(51, 51, 51, 0.9);
+}
+
+.amount-box .amount {
+    font-weight: 600;
+    margin: 0;
+    font-size: 16px;
+    color: rgba(51, 51, 51, 0.7);
+    text-align: left;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: rgba(30, 30, 30, 0.1);
+}
+
+.profile-container progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    border: none;
+    width: 270px;
+    height: 2px;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: #4DAAA7;
+}
+
+progress[value]::-moz-progress-bar {
+    background-color: #4DAAA7;
+}
+
+.dot {
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    background: #4DAAA7;
+    z-index: 100;
+    position: relative;
+    margin-top: -1px;
+}
+
+.profile-container #loading {
+    left: 0;
+    display: none;
+}
+
+.nav-tabs .nav-link {
+    padding: 0.5rem 42px;
+}
+
+.img_event {
+    height: auto;
+}
+
+.card-mobile {
+    display: none;
+}
+
+.card.project_card_mobile {
+    display: none;
+}
+
+.card.project_card_mobile .amount {
+    margin: 0;
+}
+
+.profile-container .card-mobile .card-img-top.mobile {
+    padding: 0;
+}
+
+.profile-container .card-desktop .card-img-top {
+    padding: 0;
+    border-radius: 0;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .profile-container progress[value] {
+        width: 180px;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 0.5rem 20px;
+    }
+
+    .profile-container .left {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+
+    .profile-container {
+        margin-top: 90px;
+    }
+
+    .container.profile-container > div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-desktop {
+        display: none;
+    }
+
+    .card-mobile {
+        display: block;
+        width: 90%;
+        margin-bottom: 40px;
+    }
+
+    .card-mobile .row {
+        border-top: 2px solid #4DAAA7;
+        background-color: #FFFFFF;
+        border-radius: 4px;
+        padding: 20px 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .card-mobile .row img {
+        width: 140px;
+        border-radius: 4px;
+    }
+
+    .card-mobile .row .info {
+        color: #37474F;
+        margin-top: 10px;
+    }
+
+    .card-mobile .row .info:nth-child(3) {
+        color: #78909C;
+       font-size: 12px;
+    }
+
+    .profile-container .card {
+        margin-bottom: 40px;
+    }
+
+    .projects-container .el_title a {
+        font-size: 20px;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 0.5rem 10px;
+        font-size: 16px;
+    }
+
+    .tab-container {
+        margin-left: 0!important;
+    }
+
+    .card.project_card_mobile {
+        display: flex;
+    }
+
+    .card.project_card_mobile .amount {
+        color: #37474F;
+    }
+
+    .donation-card {
+        display: none;
+    }
+
+    #projects_scroll, #donations_scroll {
+        justify-content: center;
+    }
+
+    .card.project_card_mobile .line {
+        border: 1px solid;
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        height: 20px;
+    }
+
+    .profile-container progress[value] {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .nav-tabs .nav-link {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .nav-tabs .nav-link {
+        font-size: 10px;
+    }
+}

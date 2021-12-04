@@ -1,0 +1,127 @@
+body {
+}
+
+.contact_title {
+  margin-top: 80px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 61px;
+
+  display: flex;
+  align-items: center;
+
+  color: rgba(51, 51, 51, 0.9);
+  padding-left: 10%;
+}
+
+.contact_subtitle {
+  margin-top: 1em;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(51, 51, 51, 0.7);
+  padding-left: 10%;
+}
+
+.contact_block {
+  margin-top: 3em;
+  width: 80%;
+  display: flex;
+  padding-left: 10%;
+}
+
+.contact {
+  width: 65%;
+  height: auto;
+}
+
+.contact_input {
+  background: #ffffff;
+  border: 1px solid rgba(45, 48, 53, 0.2);
+  box-sizing: border-box;
+  border-radius: 3px;
+  width: 90%;
+  height: 2.5em;
+  margin-top: 1%;
+  margin-bottom: 4%;
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.contact_imput_title {
+  width: auto;
+  height: 1em;
+  background-color: #ffffff;
+  margin: 0%;
+  z-index: 1;
+  margin-left: 2%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  color: rgba(51, 51, 51, 0.4);
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.contact_button {
+  background: linear-gradient(270deg, #00928a 0%, #0eaca8 100%);
+  /* buuton_show */
+
+  box-shadow: 0px 1px 6px rgba(51, 51, 51, 0.2);
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #ffffff;
+  padding: 2% 4%;
+  border: none;
+}
+
+.contact_admin {
+  width: 35%;
+  height: auto;
+}
+
+.admin_info {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+
+  color: rgba(51, 51, 51, 0.9);
+}
+
+.contact_info {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+  color: rgba(51, 51, 51, 0.7);
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+#id_message {
+  height: 9em;
+}

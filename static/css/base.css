@@ -1,0 +1,80 @@
+@font-face {
+	font-family: Montserrat;
+	src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+body {
+	margin: 0px;
+	background-color:#FAFAFA;
+	padding: 0;
+	font-family: Montserrat;
+}
+
+.menu {
+	z-index: 999;
+	position: relative;
+	padding: 0;
+    margin: 0;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.menu .share i.fa {
+	width: 40px;
+	text-align: center;
+}
+
+.submenu i.fa {
+    line-height: 40px;
+}
+
+.menu .share:hover.bottom .submenu li:nth-child(1) {
+	opacity: 1;
+	top: 40px;
+    transition-delay: 0.08s;
+    background-color: #3b5999;
+    border-radius: 50%;
+}
+
+.menu .share:hover.bottom .submenu li:nth-child(2) {
+	opacity: 1;
+	top: 90px;
+    transition-delay: 0.16s;
+    background-color: #55acee;
+    border-radius: 50%;
+}
+
+.menu .share:hover.bottom .submenu li:nth-child(3) {
+	opacity: 1;
+	top: 140px;
+    transition-delay: 0.24s;
+    background-color: #0a66c2;
+    border-radius: 50%;
+}
+
+.menu .submenu {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ 
+.menu .submenu li {
+	transition: all ease-in-out 0.5s;
+	position: absolute;
+    top: 0;
+    right: 3px;
+	z-index: -1;
+	opacity: 0;
+}
+ 
+.menu .submenu li i.fa {
+    color: #fff;
+}
+
+#message {
+	position: absolute;
+	top: 100px;
+	right: calc(50% - 160px);
+	z-index:100;
+	background-color: #d4edda;
+}
