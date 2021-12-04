@@ -1,0 +1,89 @@
+{% load static %}
+{% load social_share %}
+{% load mathfilters %}
+{% load i18n %}
+{% load project_tags %}
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <span class="category">
+            {% if from_details %}
+                    {% if project.finished_at %}
+            <span class="date">{{ project.finished_at|date:"d.m.Y" }}</span>
+        {% endif %}
+            {% else %}
+            #{{ project.category }}
+            {% endif %}
+        </span>
+        <div class="right d-flex justify-content-center align-items-center">
+            {% if not project.groups.all|length %}
+                <ul class="menu">
+                    <li class="share bottom">
+                        <img src="{% static 'images/share.png' %}"/>
+                        <ul class="submenu">
+                            <li>{% post_to_facebook project project %}</li>
+                            <li>{% post_to_twitter project.title project project.title %}</li>
+                            <li>{% post_to_linkedin project %}</li>
+                        </ul>
+                    </li>
+                </ul>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+            <div id="project_like_section{{project.id}}">
+                {% include 'project/likes.html' with project=project %}
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+    <a href="{% url 'project:details' project.pk %}" class="card-body">
+        {% if not from_details %}
+        <h5 class="card-title">{{project.title}}</h5>
+
+        {% if project.finished_at %}
+        <span class="date">{{ project.finished_at|date:"d.m.Y" }}</span>
+        {% endif %}
+        {% endif %}
+        <p class="card-text">{{ project.description }}</p>
+    </a>
+    {% if not from_details %}
+        <img class="card-img-top" src="{{ project.get_default_image }}/" height='180' alt="{{project.title}}">
+    {% endif %}
+    <div class="card-footer">
+        <div class="d-flex">
+            <progress class="mb-2" value='{{project.percentage}}' max='100'>
+            </progress>
+            <span class="dot" style="right:{% if project.percentage == 0 %}100%{% else %}
+             {% if project.percentage > 100 %}0%{% else %}{{ 100|sub:project.percentage }}%{% endif %}{% endif %}"></span>
+        </div>
+        <div class="d-flex justify-content-between my-3">
+            <div class="amount-box d-flex align-items-start flex-column">
+                <span class="amount-title">{% trans "Raised" %}</span>
+                <p class="amount">֏ {{project.total|withspace}}</p>
+            </div>
+
+            <div class="amount-box d-flex align-items-end flex-column">
+                <span class="amount-title">{% trans "Goal" %}</span>
+                <p class="amount">֏ {{ project.goal|withspace }}</p>
+            </div>
+        </div>
+
+        {% if report %}
+            <a href="{% url 'achievement:report' project.pk %}" class="btn btn-outline-primary btn-outline-custom w-100">{% trans "Report" %}</a>
+        {% else %}
+            {% if project.status == 'F' %}
+            <a href="{% url 'project:details' project.pk %}" class="btn btn-outline-primary btn-outline-custom w-100">{% trans "Read more" %}</a>
+            {% else %}
+            <a href="{% url 'payment:payment' project.pk %}" class="btn btn-primary btn-custom w-100">
+                {% if project.category.title_en|lower == 'Military'|lower %}
+                    {% trans "Support" %}
+                {% else %}
+                    {% trans "Donate now" %}
+                {% endif %}
+            </a>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+

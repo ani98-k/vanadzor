@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Donation Platform</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/like.js' %}"></script>
+</head>
+<body>
+
+{% url 'users:sign_in' as signin_url %}
+{% if messages and request.get_full_path != signin_url %}
+    <div id="message"  class="toast alert alert-success show" role="alert" aria-live="polite" aria-atomic="true" data-delay="5000">
+        <div class="toast-body">
+            {% for message in messages %}
+            <div>{{ message }}</div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        $('#message').toast('show')
+    </script>
+{% endif %}
+
+    {% block header %} {% include 'components/header.html' %} {% endblock %}
+
+    <div>{% block content %} {% endblock %}</div>
+
+    {% comment %} {% block footer %} {% include 'components/footer.html' %} {% endblock %} {% endcomment %}
+</body>
+</html>

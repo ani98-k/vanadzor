@@ -1,0 +1,96 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_available_languages as languages %}
+
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/header.css' %}" / >
+
+
+<header id="head">
+    {% with request.resolver_match.url_name as url_name %}
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand ml-5 {% if url_name == 'index' %}active{% endif %}" href="/">
+            <img src="{% static 'images/logo.png' %}" width="50" height="50" alt="" loading="lazy">
+        </a>
+        <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+            <ul class="nav navbar-nav pr-5 align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'index' %}active{% endif %}" href="/">{% trans 'Home' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'index' %}active{% endif %}"
+                        href="{% url 'places:index' %}">{% translate 'Projects' %}</a>
+                </li>
+                <li class="nav-item">
+                    {% comment %} <a class="nav-link {% if url_name == 'events_list' %}active{% endif %}"
+                    href="{% url 'events:events_list' %}">{% trans 'Events' %}</a> {% endcomment %}
+                </li>
+                <li class="nav-item">
+                    {% comment %} <a class="nav-link {% if url_name == 'achievements' %}active{% endif %}" href="{% url 'achievement:achievements' %}">{% trans 'Achievements' %}</a> {% endcomment %}
+                </li>
+                <li class="nav-item" >
+                    {% comment %} <a class="nav-link {% if url_name == 'about' %}active{% endif %}"
+                       href="{% url 'resources:about' %}">{% trans 'About us' %}</a> {% endcomment %}
+                </li>
+                <li id="auth-image" class="nav-item">
+                    {% if user.is_authenticated %}
+                    <div class="dropdown">
+                            <button class="btn" type="button" id="menu1" data-toggle="dropdown">
+                                <svg width="20px" height="20px" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M9.99984 0.66687C4.84784 0.66687 0.666504 4.8482 0.666504 10.0002C0.666504 15.1522 4.84784 19.3335 9.99984 19.3335C15.1518 19.3335 19.3332 15.1522 19.3332 10.0002C19.3332 4.8482 15.1518 0.66687 9.99984 0.66687ZM9.99984 3.46687C11.5492 3.46687 12.7998 4.71754 12.7998 6.26687C12.7998 7.8162 11.5492 9.06687 9.99984 9.06687C8.4505 9.06687 7.19984 7.8162 7.19984 6.26687C7.19984 4.71754 8.4505 3.46687 9.99984 3.46687ZM9.99984 16.7202C7.6665 16.7202 5.60384 15.5255 4.39984 13.7149C4.42784 11.8575 8.13317 10.8402 9.99984 10.8402C11.8572 10.8402 15.5718 11.8575 15.5998 13.7149C14.3958 15.5255 12.3332 16.7202 9.99984 16.7202Z" fill="white"/>
+				</svg>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                {% comment %} <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'users:logout' %}">{% trans "Sign Out" %}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'users:profile' %}">{% trans "My Profile" %}</a></li> {% endcomment %}
+                            </ul>
+                        </div>
+                        {% else %}
+                        <div class="dropdown">
+                            <button class="btn" type="button" id="menu1" data-toggle="dropdown">
+                                <svg width="20px" height="20px" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.99984 0.66687C4.84784 0.66687 0.666504 4.8482 0.666504 10.0002C0.666504 15.1522 4.84784 19.3335 9.99984 19.3335C15.1518 19.3335 19.3332 15.1522 19.3332 10.0002C19.3332 4.8482 15.1518 0.66687 9.99984 0.66687ZM9.99984 3.46687C11.5492 3.46687 12.7998 4.71754 12.7998 6.26687C12.7998 7.8162 11.5492 9.06687 9.99984 9.06687C8.4505 9.06687 7.19984 7.8162 7.19984 6.26687C7.19984 4.71754 8.4505 3.46687 9.99984 3.46687ZM9.99984 16.7202C7.6665 16.7202 5.60384 15.5255 4.39984 13.7149C4.42784 11.8575 8.13317 10.8402 9.99984 10.8402C11.8572 10.8402 15.5718 11.8575 15.5998 13.7149C14.3958 15.5255 12.3332 16.7202 9.99984 16.7202Z" fill="white"/>
+                                </svg>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                {% comment %} <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'users:sign_in' %}">{% trans 'LOG IN' %}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{% trans 'REGISTER' %}</a></li> {% endcomment %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </li>
+                <li class="form_header nav-item">
+                    {% comment %} <form class="lang_form" action="{% url 'set_language' %}" method="post">
+                        {% csrf_token %}
+                        <div class="dropdown_style form-group">
+                            <span class="btn_form">
+                                <select role="menu" aria-labelledby="menu1" class="lang" name="language" onchange="this.form.submit()">
+                                    {% for code, name in languages %}
+                                    <option value="{{ code }}" {% if code == language_code %} selected="selected" style="display: none;"
+                                    {% elif code != language_code %}  class="element2"
+                                        {% endif %}>{{ name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </span>
+                        </div>
+                    </form> {% endcomment %}
+                </li>
+            </ul>
+        </div>
+        <div class="nav-menu-button">
+            <div class="nav-menu-button-child one">
+            </div>
+            <div class="nav-menu-button-child two">
+            </div>
+            <div class="nav-menu-button-child three">
+            </div>
+        </div>
+    </nav>
+    {% endwith %}
+</header>
+
+<script src="{% static 'js/header.js' %}"></script>
+
+
